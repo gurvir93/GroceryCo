@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>GroceryCo.Infrastructure</AssemblyName>
+    <RootNamespace>GroceryCo.Infrastructure</RootNamespace>
+    <ApplicationIcon />
+    <StartupObject />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Update="Database\GroceryCoDatabase.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>GroceryCoDatabase.xsd</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Database\GroceryCoDatabase.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GroceryCoDatabase.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+</Project>
