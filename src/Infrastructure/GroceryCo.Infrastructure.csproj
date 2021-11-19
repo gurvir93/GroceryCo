@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Library</OutputType>
@@ -8,10 +8,6 @@
     <ApplicationIcon />
     <StartupObject />
   </PropertyGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Domain\GroceryCo.Domain.csproj" />
-  </ItemGroup>
 
   <ItemGroup>
     <Compile Update="Database\GroceryCoDatabase.Designer.cs">

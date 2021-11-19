@@ -8,4 +8,8 @@
     <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\GroceryCo.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

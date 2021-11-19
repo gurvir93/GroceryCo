@@ -6,4 +6,8 @@
     <RootNamespace>GroceryCo.Domain</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Infrastructure\GroceryCo.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>

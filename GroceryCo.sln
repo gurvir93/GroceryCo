@@ -8,10 +8,16 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{687EB5D5-BCFD-4187-85C9-3995DE99A2D9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroceryCo.Application", "src\Application\GroceryCo.Application.csproj", "{A0C72F4D-A487-42A6-9635-E834131ADD6E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{842BEF22-6CFE-492C-8B18-766955152811} = {842BEF22-6CFE-492C-8B18-766955152811}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroceryCo.Domain", "src\Domain\GroceryCo.Domain.csproj", "{842BEF22-6CFE-492C-8B18-766955152811}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroceryCo.Domain", "src\Domain\GroceryCo.Domain.csproj", "{842BEF22-6CFE-492C-8B18-766955152811}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6C4708E1-16E3-4969-81E2-2B5AAB66C91F} = {6C4708E1-16E3-4969-81E2-2B5AAB66C91F}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroceryCo.Infrastructure", "src\Infrastructure\GroceryCo.Infrastructure.csproj", "{6C4708E1-16E3-4969-81E2-2B5AAB66C91F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroceryCo.Infrastructure", "src\Infrastructure\GroceryCo.Infrastructure.csproj", "{6C4708E1-16E3-4969-81E2-2B5AAB66C91F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
