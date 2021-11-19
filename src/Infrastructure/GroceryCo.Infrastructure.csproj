@@ -10,6 +10,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Domain\GroceryCo.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Database\GroceryCoDatabase.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

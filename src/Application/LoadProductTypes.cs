@@ -4,10 +4,10 @@ using System.Text;
 
 namespace GroceryCo.Application
 {
-    public class LoadProducts
+    public class LoadProductTypes
     {
-
-        private List<string> _defaultProductList = new List<string>
+        private List<string> _productTypeList;
+        private List<string> _defaultProductTypeList = new List<string>
         {
             "Apples",
             "Bacon",
@@ -38,5 +38,20 @@ namespace GroceryCo.Application
             "Yogurt",
             "Zucchini"
         };
+
+        public LoadProductTypes()
+        {
+            _productTypeList = _defaultProductTypeList;
+        }
+
+        public LoadProductTypes(List<string> productList)
+        {
+            _productTypeList = productList;
+        }
+
+        public void LoadProductTypesToDB()
+        {
+
+        }
     }
 }
