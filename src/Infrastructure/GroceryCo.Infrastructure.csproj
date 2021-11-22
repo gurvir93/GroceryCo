@@ -2,12 +2,16 @@
 
   <PropertyGroup>
     <OutputType>Library</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net45</TargetFramework>
     <AssemblyName>GroceryCo.Infrastructure</AssemblyName>
     <RootNamespace>GroceryCo.Infrastructure</RootNamespace>
     <ApplicationIcon />
     <StartupObject />
   </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
 
   <ItemGroup>
     <Compile Update="Database\GroceryCoDatabase.Designer.cs">

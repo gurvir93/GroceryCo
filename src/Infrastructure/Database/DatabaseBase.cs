@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace GroceryCo.Infrastructure.Database
 {
-    public class DatabaseBase<T> : IDatabase
+    public class DatabaseBase<T> : IDatabase<T>
         where T : DataTable
     {
         private T table;
@@ -22,6 +22,11 @@ namespace GroceryCo.Infrastructure.Database
         public List<DataRow> GetDBTableRows()
         {
             return table.Select().ToList();
+        }
+
+        public DataRow GetNewRow()
+        {
+            return table.NewRow();
         }
     }
 }

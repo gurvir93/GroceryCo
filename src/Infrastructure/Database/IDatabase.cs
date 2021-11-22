@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Data;
 using System.Text;
 
-namespace GroceryCo.Infrastructure
+namespace GroceryCo.Infrastructure.Database
 {
-    public interface IDatabase
+    public interface IDatabase<T>
     {
-        public void LoadDBTable(List<DataRow> rows);
-        public List<DataRow> GetDBTableRows();
+        void LoadDBTable(List<DataRow> rows);
+        List<DataRow> GetDBTableRows();
+        DataRow GetNewRow();
     }
 }

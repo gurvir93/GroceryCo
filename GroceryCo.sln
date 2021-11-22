@@ -19,6 +19,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroceryCo.Domain", "src\Dom
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroceryCo.Infrastructure", "src\Infrastructure\GroceryCo.Infrastructure.csproj", "{6C4708E1-16E3-4969-81E2-2B5AAB66C91F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroceryCo.Tests", "tests\GroceryCo.Tests\GroceryCo.Tests.csproj", "{8EDF4429-251A-416D-BB68-93F227191BCF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{6C4708E1-16E3-4969-81E2-2B5AAB66C91F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C4708E1-16E3-4969-81E2-2B5AAB66C91F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C4708E1-16E3-4969-81E2-2B5AAB66C91F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EDF4429-251A-416D-BB68-93F227191BCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EDF4429-251A-416D-BB68-93F227191BCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EDF4429-251A-416D-BB68-93F227191BCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EDF4429-251A-416D-BB68-93F227191BCF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -45,6 +51,7 @@ Global
 		{A0C72F4D-A487-42A6-9635-E834131ADD6E} = {687EB5D5-BCFD-4187-85C9-3995DE99A2D9}
 		{842BEF22-6CFE-492C-8B18-766955152811} = {687EB5D5-BCFD-4187-85C9-3995DE99A2D9}
 		{6C4708E1-16E3-4969-81E2-2B5AAB66C91F} = {687EB5D5-BCFD-4187-85C9-3995DE99A2D9}
+		{8EDF4429-251A-416D-BB68-93F227191BCF} = {E9E1B92C-4900-487B-8AA7-D1E7EBE51F47}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {57F702E1-0A46-48B0-B241-931F5522410E}

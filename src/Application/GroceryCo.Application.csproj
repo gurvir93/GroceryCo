@@ -2,14 +2,10 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net45</TargetFramework>
     <AssemblyName>GroceryCo.Application</AssemblyName>
     <RootNamespace>GroceryCo.Application</RootNamespace>
     <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Domain\GroceryCo.Domain.csproj" />
-  </ItemGroup>
 
 </Project>

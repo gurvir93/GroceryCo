@@ -24,11 +24,11 @@ namespace GroceryCo.Infrastructure.Database {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class GroceryCoDatabase : global::System.Data.DataSet {
         
-        private ProductTypesDataTable tableProductTypes;
+        private ProductTypeDataTable tableProductType;
         
         private ProductDataTable tableProduct;
         
-        private DiscountTypesDataTable tableDiscountTypes;
+        private DiscountTypeDataTable tableDiscountType;
         
         private DiscountDataTable tableDiscount;
         
@@ -60,14 +60,14 @@ namespace GroceryCo.Infrastructure.Database {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["ProductTypes"] != null)) {
-                    base.Tables.Add(new ProductTypesDataTable(ds.Tables["ProductTypes"]));
+                if ((ds.Tables["ProductType"] != null)) {
+                    base.Tables.Add(new ProductTypeDataTable(ds.Tables["ProductType"]));
                 }
                 if ((ds.Tables["Product"] != null)) {
                     base.Tables.Add(new ProductDataTable(ds.Tables["Product"]));
                 }
-                if ((ds.Tables["DiscountTypes"] != null)) {
-                    base.Tables.Add(new DiscountTypesDataTable(ds.Tables["DiscountTypes"]));
+                if ((ds.Tables["DiscountType"] != null)) {
+                    base.Tables.Add(new DiscountTypeDataTable(ds.Tables["DiscountType"]));
                 }
                 if ((ds.Tables["Discount"] != null)) {
                     base.Tables.Add(new DiscountDataTable(ds.Tables["Discount"]));
@@ -94,9 +94,9 @@ namespace GroceryCo.Infrastructure.Database {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public ProductTypesDataTable ProductTypes {
+        public ProductTypeDataTable ProductType {
             get {
-                return this.tableProductTypes;
+                return this.tableProductType;
             }
         }
         
@@ -114,9 +114,9 @@ namespace GroceryCo.Infrastructure.Database {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public DiscountTypesDataTable DiscountTypes {
+        public DiscountTypeDataTable DiscountType {
             get {
-                return this.tableDiscountTypes;
+                return this.tableDiscountType;
             }
         }
         
@@ -197,14 +197,14 @@ namespace GroceryCo.Infrastructure.Database {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["ProductTypes"] != null)) {
-                    base.Tables.Add(new ProductTypesDataTable(ds.Tables["ProductTypes"]));
+                if ((ds.Tables["ProductType"] != null)) {
+                    base.Tables.Add(new ProductTypeDataTable(ds.Tables["ProductType"]));
                 }
                 if ((ds.Tables["Product"] != null)) {
                     base.Tables.Add(new ProductDataTable(ds.Tables["Product"]));
                 }
-                if ((ds.Tables["DiscountTypes"] != null)) {
-                    base.Tables.Add(new DiscountTypesDataTable(ds.Tables["DiscountTypes"]));
+                if ((ds.Tables["DiscountType"] != null)) {
+                    base.Tables.Add(new DiscountTypeDataTable(ds.Tables["DiscountType"]));
                 }
                 if ((ds.Tables["Discount"] != null)) {
                     base.Tables.Add(new DiscountDataTable(ds.Tables["Discount"]));
@@ -242,10 +242,10 @@ namespace GroceryCo.Infrastructure.Database {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableProductTypes = ((ProductTypesDataTable)(base.Tables["ProductTypes"]));
+            this.tableProductType = ((ProductTypeDataTable)(base.Tables["ProductType"]));
             if ((initTable == true)) {
-                if ((this.tableProductTypes != null)) {
-                    this.tableProductTypes.InitVars();
+                if ((this.tableProductType != null)) {
+                    this.tableProductType.InitVars();
                 }
             }
             this.tableProduct = ((ProductDataTable)(base.Tables["Product"]));
@@ -254,10 +254,10 @@ namespace GroceryCo.Infrastructure.Database {
                     this.tableProduct.InitVars();
                 }
             }
-            this.tableDiscountTypes = ((DiscountTypesDataTable)(base.Tables["DiscountTypes"]));
+            this.tableDiscountType = ((DiscountTypeDataTable)(base.Tables["DiscountType"]));
             if ((initTable == true)) {
-                if ((this.tableDiscountTypes != null)) {
-                    this.tableDiscountTypes.InitVars();
+                if ((this.tableDiscountType != null)) {
+                    this.tableDiscountType.InitVars();
                 }
             }
             this.tableDiscount = ((DiscountDataTable)(base.Tables["Discount"]));
@@ -276,32 +276,32 @@ namespace GroceryCo.Infrastructure.Database {
             this.Namespace = "http://tempuri.org/GroceryCoDatabase.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableProductTypes = new ProductTypesDataTable();
-            base.Tables.Add(this.tableProductTypes);
+            this.tableProductType = new ProductTypeDataTable();
+            base.Tables.Add(this.tableProductType);
             this.tableProduct = new ProductDataTable();
             base.Tables.Add(this.tableProduct);
-            this.tableDiscountTypes = new DiscountTypesDataTable();
-            base.Tables.Add(this.tableDiscountTypes);
+            this.tableDiscountType = new DiscountTypeDataTable();
+            base.Tables.Add(this.tableDiscountType);
             this.tableDiscount = new DiscountDataTable();
             base.Tables.Add(this.tableDiscount);
             global::System.Data.ForeignKeyConstraint fkc;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_ProductTypes_Product", new global::System.Data.DataColumn[] {
-                        this.tableProductTypes.UPCColumn}, new global::System.Data.DataColumn[] {
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_ProductType_Product", new global::System.Data.DataColumn[] {
+                        this.tableProductType.UPCColumn}, new global::System.Data.DataColumn[] {
                         this.tableProduct.UPCColumn});
             this.tableProduct.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.Cascade;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_DiscountType_Discount", new global::System.Data.DataColumn[] {
-                        this.tableDiscountTypes.DiscountTypeIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableDiscount.DiscountTypeIDColumn});
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_ProductType_Discount", new global::System.Data.DataColumn[] {
+                        this.tableProductType.UPCColumn}, new global::System.Data.DataColumn[] {
+                        this.tableDiscount.UPCColumn});
             this.tableDiscount.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.Cascade;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_ProductTypes_Discount", new global::System.Data.DataColumn[] {
-                        this.tableProductTypes.UPCColumn}, new global::System.Data.DataColumn[] {
-                        this.tableDiscount.UPCColumn});
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_DiscountType_Discount", new global::System.Data.DataColumn[] {
+                        this.tableDiscountType.DiscountTypeIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableDiscount.DiscountTypeIDColumn});
             this.tableDiscount.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.Cascade;
@@ -310,7 +310,7 @@ namespace GroceryCo.Infrastructure.Database {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeProductTypes() {
+        private bool ShouldSerializeProductType() {
             return false;
         }
         
@@ -322,7 +322,7 @@ namespace GroceryCo.Infrastructure.Database {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeDiscountTypes() {
+        private bool ShouldSerializeDiscountType() {
             return false;
         }
         
@@ -388,13 +388,13 @@ namespace GroceryCo.Infrastructure.Database {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void ProductTypesRowChangeEventHandler(object sender, ProductTypesRowChangeEvent e);
+        public delegate void ProductTypeRowChangeEventHandler(object sender, ProductTypeRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void ProductRowChangeEventHandler(object sender, ProductRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void DiscountTypesRowChangeEventHandler(object sender, DiscountTypesRowChangeEvent e);
+        public delegate void DiscountTypeRowChangeEventHandler(object sender, DiscountTypeRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void DiscountRowChangeEventHandler(object sender, DiscountRowChangeEvent e);
@@ -404,16 +404,18 @@ namespace GroceryCo.Infrastructure.Database {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class ProductTypesDataTable : global::System.Data.TypedTableBase<ProductTypesRow> {
+        public partial class ProductTypeDataTable : global::System.Data.TypedTableBase<ProductTypeRow> {
             
             private global::System.Data.DataColumn columnUPC;
             
             private global::System.Data.DataColumn columnProductName;
             
+            private global::System.Data.DataColumn columnPrice;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ProductTypesDataTable() {
-                this.TableName = "ProductTypes";
+            public ProductTypeDataTable() {
+                this.TableName = "ProductType";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -421,7 +423,7 @@ namespace GroceryCo.Infrastructure.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal ProductTypesDataTable(global::System.Data.DataTable table) {
+            internal ProductTypeDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -438,7 +440,7 @@ namespace GroceryCo.Infrastructure.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected ProductTypesDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected ProductTypeDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -461,6 +463,14 @@ namespace GroceryCo.Infrastructure.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn PriceColumn {
+                get {
+                    return this.columnPrice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -470,46 +480,54 @@ namespace GroceryCo.Infrastructure.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ProductTypesRow this[int index] {
+            public ProductTypeRow this[int index] {
                 get {
-                    return ((ProductTypesRow)(this.Rows[index]));
+                    return ((ProductTypeRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event ProductTypesRowChangeEventHandler ProductTypesRowChanging;
+            public event ProductTypeRowChangeEventHandler ProductTypeRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event ProductTypesRowChangeEventHandler ProductTypesRowChanged;
+            public event ProductTypeRowChangeEventHandler ProductTypeRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event ProductTypesRowChangeEventHandler ProductTypesRowDeleting;
+            public event ProductTypeRowChangeEventHandler ProductTypeRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event ProductTypesRowChangeEventHandler ProductTypesRowDeleted;
+            public event ProductTypeRowChangeEventHandler ProductTypeRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddProductTypesRow(ProductTypesRow row) {
+            public void AddProductTypeRow(ProductTypeRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ProductTypesRow AddProductTypesRow(string ProductName) {
-                ProductTypesRow rowProductTypesRow = ((ProductTypesRow)(this.NewRow()));
+            public ProductTypeRow AddProductTypeRow(int UPC, string ProductName, decimal Price) {
+                ProductTypeRow rowProductTypeRow = ((ProductTypeRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
-                        ProductName};
-                rowProductTypesRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowProductTypesRow);
-                return rowProductTypesRow;
+                        UPC,
+                        ProductName,
+                        Price};
+                rowProductTypeRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowProductTypeRow);
+                return rowProductTypeRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ProductTypeRow FindByUPC(int UPC) {
+                return ((ProductTypeRow)(this.Rows.Find(new object[] {
+                            UPC})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                ProductTypesDataTable cln = ((ProductTypesDataTable)(base.Clone()));
+                ProductTypeDataTable cln = ((ProductTypeDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -517,7 +535,7 @@ namespace GroceryCo.Infrastructure.Database {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new ProductTypesDataTable();
+                return new ProductTypeDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -525,6 +543,7 @@ namespace GroceryCo.Infrastructure.Database {
             internal void InitVars() {
                 this.columnUPC = base.Columns["UPC"];
                 this.columnProductName = base.Columns["ProductName"];
+                this.columnPrice = base.Columns["Price"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -534,39 +553,41 @@ namespace GroceryCo.Infrastructure.Database {
                 base.Columns.Add(this.columnUPC);
                 this.columnProductName = new global::System.Data.DataColumn("ProductName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnProductName);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("ProductTypesPK", new global::System.Data.DataColumn[] {
-                                this.columnUPC}, false));
-                this.columnUPC.AutoIncrement = true;
+                this.columnPrice = new global::System.Data.DataColumn("Price", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrice);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("ProductTypePK", new global::System.Data.DataColumn[] {
+                                this.columnUPC}, true));
                 this.columnUPC.AllowDBNull = false;
-                this.columnUPC.ReadOnly = true;
                 this.columnUPC.Unique = true;
                 this.columnProductName.AllowDBNull = false;
+                this.columnPrice.AllowDBNull = false;
+                this.columnPrice.DefaultValue = ((decimal)(0m));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ProductTypesRow NewProductTypesRow() {
-                return ((ProductTypesRow)(this.NewRow()));
+            public ProductTypeRow NewProductTypeRow() {
+                return ((ProductTypeRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new ProductTypesRow(builder);
+                return new ProductTypeRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(ProductTypesRow);
+                return typeof(ProductTypeRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.ProductTypesRowChanged != null)) {
-                    this.ProductTypesRowChanged(this, new ProductTypesRowChangeEvent(((ProductTypesRow)(e.Row)), e.Action));
+                if ((this.ProductTypeRowChanged != null)) {
+                    this.ProductTypeRowChanged(this, new ProductTypeRowChangeEvent(((ProductTypeRow)(e.Row)), e.Action));
                 }
             }
             
@@ -574,8 +595,8 @@ namespace GroceryCo.Infrastructure.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.ProductTypesRowChanging != null)) {
-                    this.ProductTypesRowChanging(this, new ProductTypesRowChangeEvent(((ProductTypesRow)(e.Row)), e.Action));
+                if ((this.ProductTypeRowChanging != null)) {
+                    this.ProductTypeRowChanging(this, new ProductTypeRowChangeEvent(((ProductTypeRow)(e.Row)), e.Action));
                 }
             }
             
@@ -583,8 +604,8 @@ namespace GroceryCo.Infrastructure.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.ProductTypesRowDeleted != null)) {
-                    this.ProductTypesRowDeleted(this, new ProductTypesRowChangeEvent(((ProductTypesRow)(e.Row)), e.Action));
+                if ((this.ProductTypeRowDeleted != null)) {
+                    this.ProductTypeRowDeleted(this, new ProductTypeRowChangeEvent(((ProductTypeRow)(e.Row)), e.Action));
                 }
             }
             
@@ -592,14 +613,14 @@ namespace GroceryCo.Infrastructure.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.ProductTypesRowDeleting != null)) {
-                    this.ProductTypesRowDeleting(this, new ProductTypesRowChangeEvent(((ProductTypesRow)(e.Row)), e.Action));
+                if ((this.ProductTypeRowDeleting != null)) {
+                    this.ProductTypeRowDeleting(this, new ProductTypeRowChangeEvent(((ProductTypeRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveProductTypesRow(ProductTypesRow row) {
+            public void RemoveProductTypeRow(ProductTypeRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -626,7 +647,7 @@ namespace GroceryCo.Infrastructure.Database {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "ProductTypesDataTable";
+                attribute2.FixedValue = "ProductTypeDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -676,12 +697,6 @@ namespace GroceryCo.Infrastructure.Database {
             
             private global::System.Data.DataColumn columnUPC;
             
-            private global::System.Data.DataColumn columnStartDate;
-            
-            private global::System.Data.DataColumn columnEndDate;
-            
-            private global::System.Data.DataColumn columnPrice;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public ProductDataTable() {
@@ -725,30 +740,6 @@ namespace GroceryCo.Infrastructure.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn StartDateColumn {
-                get {
-                    return this.columnStartDate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn EndDateColumn {
-                get {
-                    return this.columnEndDate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn PriceColumn {
-                get {
-                    return this.columnPrice;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -784,24 +775,13 @@ namespace GroceryCo.Infrastructure.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ProductRow AddProductRow(int UPC, System.DateTime StartDate, System.DateTime EndDate, decimal Price) {
+            public ProductRow AddProductRow(int UPC) {
                 ProductRow rowProductRow = ((ProductRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        UPC,
-                        StartDate,
-                        EndDate,
-                        Price};
+                        UPC};
                 rowProductRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowProductRow);
                 return rowProductRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ProductRow FindByUPCStartDate(int UPC, System.DateTime StartDate) {
-                return ((ProductRow)(this.Rows.Find(new object[] {
-                            UPC,
-                            StartDate})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -822,9 +802,6 @@ namespace GroceryCo.Infrastructure.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this.columnUPC = base.Columns["UPC"];
-                this.columnStartDate = base.Columns["StartDate"];
-                this.columnEndDate = base.Columns["EndDate"];
-                this.columnPrice = base.Columns["Price"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -832,18 +809,7 @@ namespace GroceryCo.Infrastructure.Database {
             private void InitClass() {
                 this.columnUPC = new global::System.Data.DataColumn("UPC", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUPC);
-                this.columnStartDate = new global::System.Data.DataColumn("StartDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStartDate);
-                this.columnEndDate = new global::System.Data.DataColumn("EndDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEndDate);
-                this.columnPrice = new global::System.Data.DataColumn("Price", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPrice);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("ProductPK", new global::System.Data.DataColumn[] {
-                                this.columnUPC,
-                                this.columnStartDate}, true));
                 this.columnUPC.AllowDBNull = false;
-                this.columnStartDate.AllowDBNull = false;
-                this.columnEndDate.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -975,16 +941,14 @@ namespace GroceryCo.Infrastructure.Database {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class DiscountTypesDataTable : global::System.Data.TypedTableBase<DiscountTypesRow> {
+        public partial class DiscountTypeDataTable : global::System.Data.TypedTableBase<DiscountTypeRow> {
             
             private global::System.Data.DataColumn columnDiscountTypeID;
             
-            private global::System.Data.DataColumn columnDiscountTypeDesc;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DiscountTypesDataTable() {
-                this.TableName = "DiscountTypes";
+            public DiscountTypeDataTable() {
+                this.TableName = "DiscountType";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -992,7 +956,7 @@ namespace GroceryCo.Infrastructure.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal DiscountTypesDataTable(global::System.Data.DataTable table) {
+            internal DiscountTypeDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -1009,7 +973,7 @@ namespace GroceryCo.Infrastructure.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected DiscountTypesDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected DiscountTypeDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -1024,14 +988,6 @@ namespace GroceryCo.Infrastructure.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn DiscountTypeDescColumn {
-                get {
-                    return this.columnDiscountTypeDesc;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1041,53 +997,52 @@ namespace GroceryCo.Infrastructure.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DiscountTypesRow this[int index] {
+            public DiscountTypeRow this[int index] {
                 get {
-                    return ((DiscountTypesRow)(this.Rows[index]));
+                    return ((DiscountTypeRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event DiscountTypesRowChangeEventHandler DiscountTypesRowChanging;
+            public event DiscountTypeRowChangeEventHandler DiscountTypeRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event DiscountTypesRowChangeEventHandler DiscountTypesRowChanged;
+            public event DiscountTypeRowChangeEventHandler DiscountTypeRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event DiscountTypesRowChangeEventHandler DiscountTypesRowDeleting;
+            public event DiscountTypeRowChangeEventHandler DiscountTypeRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event DiscountTypesRowChangeEventHandler DiscountTypesRowDeleted;
+            public event DiscountTypeRowChangeEventHandler DiscountTypeRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddDiscountTypesRow(DiscountTypesRow row) {
+            public void AddDiscountTypeRow(DiscountTypeRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DiscountTypesRow AddDiscountTypesRow(string DiscountTypeID, string DiscountTypeDesc) {
-                DiscountTypesRow rowDiscountTypesRow = ((DiscountTypesRow)(this.NewRow()));
+            public DiscountTypeRow AddDiscountTypeRow(string DiscountTypeID) {
+                DiscountTypeRow rowDiscountTypeRow = ((DiscountTypeRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        DiscountTypeID,
-                        DiscountTypeDesc};
-                rowDiscountTypesRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowDiscountTypesRow);
-                return rowDiscountTypesRow;
+                        DiscountTypeID};
+                rowDiscountTypeRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowDiscountTypeRow);
+                return rowDiscountTypeRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DiscountTypesRow FindByDiscountTypeID(string DiscountTypeID) {
-                return ((DiscountTypesRow)(this.Rows.Find(new object[] {
+            public DiscountTypeRow FindByDiscountTypeID(string DiscountTypeID) {
+                return ((DiscountTypeRow)(this.Rows.Find(new object[] {
                             DiscountTypeID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                DiscountTypesDataTable cln = ((DiscountTypesDataTable)(base.Clone()));
+                DiscountTypeDataTable cln = ((DiscountTypeDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -1095,14 +1050,13 @@ namespace GroceryCo.Infrastructure.Database {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new DiscountTypesDataTable();
+                return new DiscountTypeDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this.columnDiscountTypeID = base.Columns["DiscountTypeID"];
-                this.columnDiscountTypeDesc = base.Columns["DiscountTypeDesc"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1110,8 +1064,6 @@ namespace GroceryCo.Infrastructure.Database {
             private void InitClass() {
                 this.columnDiscountTypeID = new global::System.Data.DataColumn("DiscountTypeID", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDiscountTypeID);
-                this.columnDiscountTypeDesc = new global::System.Data.DataColumn("DiscountTypeDesc", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDiscountTypeDesc);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("DiscountTypePK", new global::System.Data.DataColumn[] {
                                 this.columnDiscountTypeID}, true));
                 this.columnDiscountTypeID.AllowDBNull = false;
@@ -1120,28 +1072,28 @@ namespace GroceryCo.Infrastructure.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DiscountTypesRow NewDiscountTypesRow() {
-                return ((DiscountTypesRow)(this.NewRow()));
+            public DiscountTypeRow NewDiscountTypeRow() {
+                return ((DiscountTypeRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new DiscountTypesRow(builder);
+                return new DiscountTypeRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(DiscountTypesRow);
+                return typeof(DiscountTypeRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.DiscountTypesRowChanged != null)) {
-                    this.DiscountTypesRowChanged(this, new DiscountTypesRowChangeEvent(((DiscountTypesRow)(e.Row)), e.Action));
+                if ((this.DiscountTypeRowChanged != null)) {
+                    this.DiscountTypeRowChanged(this, new DiscountTypeRowChangeEvent(((DiscountTypeRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1149,8 +1101,8 @@ namespace GroceryCo.Infrastructure.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.DiscountTypesRowChanging != null)) {
-                    this.DiscountTypesRowChanging(this, new DiscountTypesRowChangeEvent(((DiscountTypesRow)(e.Row)), e.Action));
+                if ((this.DiscountTypeRowChanging != null)) {
+                    this.DiscountTypeRowChanging(this, new DiscountTypeRowChangeEvent(((DiscountTypeRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1158,8 +1110,8 @@ namespace GroceryCo.Infrastructure.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.DiscountTypesRowDeleted != null)) {
-                    this.DiscountTypesRowDeleted(this, new DiscountTypesRowChangeEvent(((DiscountTypesRow)(e.Row)), e.Action));
+                if ((this.DiscountTypeRowDeleted != null)) {
+                    this.DiscountTypeRowDeleted(this, new DiscountTypeRowChangeEvent(((DiscountTypeRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1167,14 +1119,14 @@ namespace GroceryCo.Infrastructure.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.DiscountTypesRowDeleting != null)) {
-                    this.DiscountTypesRowDeleting(this, new DiscountTypesRowChangeEvent(((DiscountTypesRow)(e.Row)), e.Action));
+                if ((this.DiscountTypeRowDeleting != null)) {
+                    this.DiscountTypeRowDeleting(this, new DiscountTypeRowChangeEvent(((DiscountTypeRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveDiscountTypesRow(DiscountTypesRow row) {
+            public void RemoveDiscountTypeRow(DiscountTypeRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -1201,7 +1153,7 @@ namespace GroceryCo.Infrastructure.Database {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "DiscountTypesDataTable";
+                attribute2.FixedValue = "DiscountTypeDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -1257,7 +1209,9 @@ namespace GroceryCo.Infrastructure.Database {
             
             private global::System.Data.DataColumn columnEndDate;
             
-            private global::System.Data.DataColumn columnDiscountPercentage;
+            private global::System.Data.DataColumn columnDiscountPercent;
+            
+            private global::System.Data.DataColumn columnItemsRequired;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -1326,9 +1280,17 @@ namespace GroceryCo.Infrastructure.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn DiscountPercentageColumn {
+            public global::System.Data.DataColumn DiscountPercentColumn {
                 get {
-                    return this.columnDiscountPercentage;
+                    return this.columnDiscountPercent;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ItemsRequiredColumn {
+                get {
+                    return this.columnItemsRequired;
                 }
             }
             
@@ -1369,14 +1331,15 @@ namespace GroceryCo.Infrastructure.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DiscountRow AddDiscountRow(int UPC, string DiscountTypeID, string StartDate, string EndDate, short DiscountPercentage) {
+            public DiscountRow AddDiscountRow(int UPC, string DiscountTypeID, System.DateTime StartDate, System.DateTime EndDate, short DiscountPercent, short ItemsRequired) {
                 DiscountRow rowDiscountRow = ((DiscountRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         UPC,
                         DiscountTypeID,
                         StartDate,
                         EndDate,
-                        DiscountPercentage};
+                        DiscountPercent,
+                        ItemsRequired};
                 rowDiscountRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDiscountRow);
                 return rowDiscountRow;
@@ -1384,7 +1347,7 @@ namespace GroceryCo.Infrastructure.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DiscountRow FindByUPCDiscountTypeIDStartDate(int UPC, string DiscountTypeID, string StartDate) {
+            public DiscountRow FindByUPCDiscountTypeIDStartDate(int UPC, string DiscountTypeID, System.DateTime StartDate) {
                 return ((DiscountRow)(this.Rows.Find(new object[] {
                             UPC,
                             DiscountTypeID,
@@ -1412,7 +1375,8 @@ namespace GroceryCo.Infrastructure.Database {
                 this.columnDiscountTypeID = base.Columns["DiscountTypeID"];
                 this.columnStartDate = base.Columns["StartDate"];
                 this.columnEndDate = base.Columns["EndDate"];
-                this.columnDiscountPercentage = base.Columns["DiscountPercentage"];
+                this.columnDiscountPercent = base.Columns["DiscountPercent"];
+                this.columnItemsRequired = base.Columns["ItemsRequired"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1422,12 +1386,14 @@ namespace GroceryCo.Infrastructure.Database {
                 base.Columns.Add(this.columnUPC);
                 this.columnDiscountTypeID = new global::System.Data.DataColumn("DiscountTypeID", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDiscountTypeID);
-                this.columnStartDate = new global::System.Data.DataColumn("StartDate", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnStartDate = new global::System.Data.DataColumn("StartDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnStartDate);
-                this.columnEndDate = new global::System.Data.DataColumn("EndDate", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnEndDate = new global::System.Data.DataColumn("EndDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEndDate);
-                this.columnDiscountPercentage = new global::System.Data.DataColumn("DiscountPercentage", typeof(short), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDiscountPercentage);
+                this.columnDiscountPercent = new global::System.Data.DataColumn("DiscountPercent", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDiscountPercent);
+                this.columnItemsRequired = new global::System.Data.DataColumn("ItemsRequired", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnItemsRequired);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("DiscountPK", new global::System.Data.DataColumn[] {
                                 this.columnUPC,
                                 this.columnDiscountTypeID,
@@ -1436,7 +1402,8 @@ namespace GroceryCo.Infrastructure.Database {
                 this.columnDiscountTypeID.AllowDBNull = false;
                 this.columnStartDate.AllowDBNull = false;
                 this.columnEndDate.AllowDBNull = false;
-                this.columnDiscountPercentage.AllowDBNull = false;
+                this.columnDiscountPercent.AllowDBNull = false;
+                this.columnDiscountPercent.DefaultValue = ((short)(0));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1566,25 +1533,25 @@ namespace GroceryCo.Infrastructure.Database {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class ProductTypesRow : global::System.Data.DataRow {
+        public partial class ProductTypeRow : global::System.Data.DataRow {
             
-            private ProductTypesDataTable tableProductTypes;
+            private ProductTypeDataTable tableProductType;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal ProductTypesRow(global::System.Data.DataRowBuilder rb) : 
+            internal ProductTypeRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableProductTypes = ((ProductTypesDataTable)(this.Table));
+                this.tableProductType = ((ProductTypeDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int UPC {
                 get {
-                    return ((int)(this[this.tableProductTypes.UPCColumn]));
+                    return ((int)(this[this.tableProductType.UPCColumn]));
                 }
                 set {
-                    this[this.tableProductTypes.UPCColumn] = value;
+                    this[this.tableProductType.UPCColumn] = value;
                 }
             }
             
@@ -1592,10 +1559,21 @@ namespace GroceryCo.Infrastructure.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string ProductName {
                 get {
-                    return ((string)(this[this.tableProductTypes.ProductNameColumn]));
+                    return ((string)(this[this.tableProductType.ProductNameColumn]));
                 }
                 set {
-                    this[this.tableProductTypes.ProductNameColumn] = value;
+                    this[this.tableProductType.ProductNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal Price {
+                get {
+                    return ((decimal)(this[this.tableProductType.PriceColumn]));
+                }
+                set {
+                    this[this.tableProductType.PriceColumn] = value;
                 }
             }
         }
@@ -1624,109 +1602,31 @@ namespace GroceryCo.Infrastructure.Database {
                     this[this.tableProduct.UPCColumn] = value;
                 }
             }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime StartDate {
-                get {
-                    return ((global::System.DateTime)(this[this.tableProduct.StartDateColumn]));
-                }
-                set {
-                    this[this.tableProduct.StartDateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime EndDate {
-                get {
-                    return ((global::System.DateTime)(this[this.tableProduct.EndDateColumn]));
-                }
-                set {
-                    this[this.tableProduct.EndDateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public decimal Price {
-                get {
-                    try {
-                        return ((decimal)(this[this.tableProduct.PriceColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Price\' in table \'Product\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableProduct.PriceColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsPriceNull() {
-                return this.IsNull(this.tableProduct.PriceColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetPriceNull() {
-                this[this.tableProduct.PriceColumn] = global::System.Convert.DBNull;
-            }
         }
         
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class DiscountTypesRow : global::System.Data.DataRow {
+        public partial class DiscountTypeRow : global::System.Data.DataRow {
             
-            private DiscountTypesDataTable tableDiscountTypes;
+            private DiscountTypeDataTable tableDiscountType;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal DiscountTypesRow(global::System.Data.DataRowBuilder rb) : 
+            internal DiscountTypeRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableDiscountTypes = ((DiscountTypesDataTable)(this.Table));
+                this.tableDiscountType = ((DiscountTypeDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string DiscountTypeID {
                 get {
-                    return ((string)(this[this.tableDiscountTypes.DiscountTypeIDColumn]));
+                    return ((string)(this[this.tableDiscountType.DiscountTypeIDColumn]));
                 }
                 set {
-                    this[this.tableDiscountTypes.DiscountTypeIDColumn] = value;
+                    this[this.tableDiscountType.DiscountTypeIDColumn] = value;
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string DiscountTypeDesc {
-                get {
-                    try {
-                        return ((string)(this[this.tableDiscountTypes.DiscountTypeDescColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DiscountTypeDesc\' in table \'DiscountTypes\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDiscountTypes.DiscountTypeDescColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsDiscountTypeDescNull() {
-                return this.IsNull(this.tableDiscountTypes.DiscountTypeDescColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetDiscountTypeDescNull() {
-                this[this.tableDiscountTypes.DiscountTypeDescColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1768,9 +1668,9 @@ namespace GroceryCo.Infrastructure.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string StartDate {
+            public System.DateTime StartDate {
                 get {
-                    return ((string)(this[this.tableDiscount.StartDateColumn]));
+                    return ((global::System.DateTime)(this[this.tableDiscount.StartDateColumn]));
                 }
                 set {
                     this[this.tableDiscount.StartDateColumn] = value;
@@ -1779,9 +1679,9 @@ namespace GroceryCo.Infrastructure.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string EndDate {
+            public System.DateTime EndDate {
                 get {
-                    return ((string)(this[this.tableDiscount.EndDateColumn]));
+                    return ((global::System.DateTime)(this[this.tableDiscount.EndDateColumn]));
                 }
                 set {
                     this[this.tableDiscount.EndDateColumn] = value;
@@ -1790,13 +1690,41 @@ namespace GroceryCo.Infrastructure.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public short DiscountPercentage {
+            public short DiscountPercent {
                 get {
-                    return ((short)(this[this.tableDiscount.DiscountPercentageColumn]));
+                    return ((short)(this[this.tableDiscount.DiscountPercentColumn]));
                 }
                 set {
-                    this[this.tableDiscount.DiscountPercentageColumn] = value;
+                    this[this.tableDiscount.DiscountPercentColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public short ItemsRequired {
+                get {
+                    try {
+                        return ((short)(this[this.tableDiscount.ItemsRequiredColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ItemsRequired\' in table \'Discount\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiscount.ItemsRequiredColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsItemsRequiredNull() {
+                return this.IsNull(this.tableDiscount.ItemsRequiredColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetItemsRequiredNull() {
+                this[this.tableDiscount.ItemsRequiredColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1804,22 +1732,22 @@ namespace GroceryCo.Infrastructure.Database {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class ProductTypesRowChangeEvent : global::System.EventArgs {
+        public class ProductTypeRowChangeEvent : global::System.EventArgs {
             
-            private ProductTypesRow eventRow;
+            private ProductTypeRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ProductTypesRowChangeEvent(ProductTypesRow row, global::System.Data.DataRowAction action) {
+            public ProductTypeRowChangeEvent(ProductTypeRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ProductTypesRow Row {
+            public ProductTypeRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -1872,22 +1800,22 @@ namespace GroceryCo.Infrastructure.Database {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class DiscountTypesRowChangeEvent : global::System.EventArgs {
+        public class DiscountTypeRowChangeEvent : global::System.EventArgs {
             
-            private DiscountTypesRow eventRow;
+            private DiscountTypeRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DiscountTypesRowChangeEvent(DiscountTypesRow row, global::System.Data.DataRowAction action) {
+            public DiscountTypeRowChangeEvent(DiscountTypeRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DiscountTypesRow Row {
+            public DiscountTypeRow Row {
                 get {
                     return this.eventRow;
                 }

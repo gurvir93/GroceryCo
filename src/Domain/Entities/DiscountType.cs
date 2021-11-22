@@ -1,6 +1,6 @@
 ﻿namespace GroceryCo.Domain.Entities
 {
-    public enum DiscountTypes
+    public enum DiscountTypeIDs
     {
         PercentOff = 0,
         BuyXGetY
