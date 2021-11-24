@@ -12,7 +12,7 @@
   <xs:element name="GroceryCoDatabase" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="GroceryCoDatabase" msprop:Generator_UserDSName="GroceryCoDatabase">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="ProductType" msprop:Generator_TableClassName="ProductTypeDataTable" msprop:Generator_TableVarName="tableProductType" msprop:Generator_TablePropName="ProductType" msprop:Generator_RowDeletingName="ProductTypeRowDeleting" msprop:Generator_RowChangingName="ProductTypeRowChanging" msprop:Generator_RowEvHandlerName="ProductTypeRowChangeEventHandler" msprop:Generator_RowDeletedName="ProductTypeRowDeleted" msprop:Generator_UserTableName="ProductType" msprop:Generator_RowChangedName="ProductTypeRowChanged" msprop:Generator_RowEvArgName="ProductTypeRowChangeEvent" msprop:Generator_RowClassName="ProductTypeRow">
+        <xs:element name="ProductType" msprop:Generator_TableClassName="ProductTypeDataTable" msprop:Generator_TableVarName="tableProductType" msprop:Generator_RowChangedName="ProductTypeRowChanged" msprop:Generator_TablePropName="ProductType" msprop:Generator_RowDeletingName="ProductTypeRowDeleting" msprop:Generator_RowChangingName="ProductTypeRowChanging" msprop:Generator_RowEvHandlerName="ProductTypeRowChangeEventHandler" msprop:Generator_RowDeletedName="ProductTypeRowDeleted" msprop:Generator_RowClassName="ProductTypeRow" msprop:Generator_UserTableName="ProductType" msprop:Generator_RowEvArgName="ProductTypeRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="UPC" msprop:Generator_ColumnVarNameInTable="columnUPC" msprop:Generator_ColumnPropNameInRow="UPC" msprop:Generator_ColumnPropNameInTable="UPCColumn" msprop:Generator_UserColumnName="UPC" type="xs:int" />
@@ -21,21 +21,22 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Product" msprop:Generator_TableClassName="ProductDataTable" msprop:Generator_TableVarName="tableProduct" msprop:Generator_TablePropName="Product" msprop:Generator_RowDeletingName="ProductRowDeleting" msprop:Generator_RowChangingName="ProductRowChanging" msprop:Generator_RowEvHandlerName="ProductRowChangeEventHandler" msprop:Generator_RowDeletedName="ProductRowDeleted" msprop:Generator_UserTableName="Product" msprop:Generator_RowChangedName="ProductRowChanged" msprop:Generator_RowEvArgName="ProductRowChangeEvent" msprop:Generator_RowClassName="ProductRow">
+        <xs:element name="Product" msprop:Generator_TableClassName="ProductDataTable" msprop:Generator_TableVarName="tableProduct" msprop:Generator_RowChangedName="ProductRowChanged" msprop:Generator_TablePropName="Product" msprop:Generator_RowDeletingName="ProductRowDeleting" msprop:Generator_RowChangingName="ProductRowChanging" msprop:Generator_RowEvHandlerName="ProductRowChangeEventHandler" msprop:Generator_RowDeletedName="ProductRowDeleted" msprop:Generator_RowClassName="ProductRow" msprop:Generator_UserTableName="Product" msprop:Generator_RowEvArgName="ProductRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="UPC" msprop:Generator_ColumnVarNameInTable="columnUPC" msprop:Generator_ColumnPropNameInRow="UPC" msprop:Generator_ColumnPropNameInTable="UPCColumn" msprop:Generator_UserColumnName="UPC" type="xs:int" />
+              <xs:element name="Quantity" msprop:Generator_ColumnVarNameInTable="columnQuantity" msprop:Generator_ColumnPropNameInRow="Quantity" msprop:Generator_ColumnPropNameInTable="QuantityColumn" msprop:Generator_UserColumnName="Quantity" type="xs:int" default="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DiscountType" msprop:Generator_TableClassName="DiscountTypeDataTable" msprop:Generator_TableVarName="tableDiscountType" msprop:Generator_TablePropName="DiscountType" msprop:Generator_RowDeletingName="DiscountTypeRowDeleting" msprop:Generator_RowChangingName="DiscountTypeRowChanging" msprop:Generator_RowEvHandlerName="DiscountTypeRowChangeEventHandler" msprop:Generator_RowDeletedName="DiscountTypeRowDeleted" msprop:Generator_UserTableName="DiscountType" msprop:Generator_RowChangedName="DiscountTypeRowChanged" msprop:Generator_RowEvArgName="DiscountTypeRowChangeEvent" msprop:Generator_RowClassName="DiscountTypeRow">
+        <xs:element name="DiscountType" msprop:Generator_TableClassName="DiscountTypeDataTable" msprop:Generator_TableVarName="tableDiscountType" msprop:Generator_RowChangedName="DiscountTypeRowChanged" msprop:Generator_TablePropName="DiscountType" msprop:Generator_RowDeletingName="DiscountTypeRowDeleting" msprop:Generator_RowChangingName="DiscountTypeRowChanging" msprop:Generator_RowEvHandlerName="DiscountTypeRowChangeEventHandler" msprop:Generator_RowDeletedName="DiscountTypeRowDeleted" msprop:Generator_RowClassName="DiscountTypeRow" msprop:Generator_UserTableName="DiscountType" msprop:Generator_RowEvArgName="DiscountTypeRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="DiscountTypeID" msprop:Generator_ColumnVarNameInTable="columnDiscountTypeID" msprop:Generator_ColumnPropNameInRow="DiscountTypeID" msprop:Generator_ColumnPropNameInTable="DiscountTypeIDColumn" msprop:Generator_UserColumnName="DiscountTypeID" type="xs:string" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Discount" msprop:Generator_TableClassName="DiscountDataTable" msprop:Generator_TableVarName="tableDiscount" msprop:Generator_TablePropName="Discount" msprop:Generator_RowDeletingName="DiscountRowDeleting" msprop:Generator_RowChangingName="DiscountRowChanging" msprop:Generator_RowEvHandlerName="DiscountRowChangeEventHandler" msprop:Generator_RowDeletedName="DiscountRowDeleted" msprop:Generator_UserTableName="Discount" msprop:Generator_RowChangedName="DiscountRowChanged" msprop:Generator_RowEvArgName="DiscountRowChangeEvent" msprop:Generator_RowClassName="DiscountRow">
+        <xs:element name="Discount" msprop:Generator_TableClassName="DiscountDataTable" msprop:Generator_TableVarName="tableDiscount" msprop:Generator_RowChangedName="DiscountRowChanged" msprop:Generator_TablePropName="Discount" msprop:Generator_RowDeletingName="DiscountRowDeleting" msprop:Generator_RowChangingName="DiscountRowChanging" msprop:Generator_RowEvHandlerName="DiscountRowChangeEventHandler" msprop:Generator_RowDeletedName="DiscountRowDeleted" msprop:Generator_RowClassName="DiscountRow" msprop:Generator_UserTableName="Discount" msprop:Generator_RowEvArgName="DiscountRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="UPC" msprop:Generator_ColumnVarNameInTable="columnUPC" msprop:Generator_ColumnPropNameInRow="UPC" msprop:Generator_ColumnPropNameInTable="UPCColumn" msprop:Generator_UserColumnName="UPC" type="xs:int" />
@@ -63,13 +64,13 @@
       <xs:field xpath="mstns:DiscountTypeID" />
       <xs:field xpath="mstns:StartDate" />
     </xs:unique>
-    <xs:keyref name="FK_ProductType_Discount" refer="ProductTypePK" msdata:ConstraintOnly="true">
-      <xs:selector xpath=".//mstns:Discount" />
-      <xs:field xpath="mstns:UPC" />
-    </xs:keyref>
     <xs:keyref name="FK_DiscountType_Discount" refer="DiscountTypePK" msdata:ConstraintOnly="true">
       <xs:selector xpath=".//mstns:Discount" />
       <xs:field xpath="mstns:DiscountTypeID" />
+    </xs:keyref>
+    <xs:keyref name="FK_ProductType_Discount" refer="ProductTypePK" msdata:ConstraintOnly="true">
+      <xs:selector xpath=".//mstns:Discount" />
+      <xs:field xpath="mstns:UPC" />
     </xs:keyref>
     <xs:keyref name="FK_ProductType_Product" refer="ProductTypePK" msdata:ConstraintOnly="true">
       <xs:selector xpath=".//mstns:Product" />

@@ -7,31 +7,35 @@ namespace GroceryCo.Domain
 {
     public class MapEntityToDatabase
     {
-        public static void MapProductEntityToTable<T>(List<Product> productList, DataTable dataTable)
+        public static void MapProductEntityToTable(List<ProductEntity> productList, DataTable dataTable)
         {
             foreach (var entity in productList)
             {
                 DataRow row = dataTable.NewRow();
                 row[nameof(entity.UPC)] = entity.UPC;
+                row[nameof(entity.Quantity)] = entity.Quantity;
 
                 dataTable.Rows.Add(row);
             }
         }
 
-        public static void MapProductTypeEntityToTable(List<ProductType> productTypes, DataTable dataTable)
+        public static void MapProductTypeEntityToTable(List<ProductTypeEntity> productTypes, DataTable dataTable)
         {
             foreach (var productType in productTypes)
             {
                 DataRow row = dataTable.NewRow();
                 row[nameof(productType.UPC)] = productType.UPC;
                 row[nameof(productType.ProductName)] = productType.ProductName;
+                row[nameof(productType.Price)] = productType.Price;
 
                 dataTable.Rows.Add(row);
             }
         }
 
-        public static void MapDiscountEntityToTable(List<Discount> discountList, DataTable dataTable)
+        public static void MapDiscountEntityToTable(List<DiscountEntity> discountList, DataTable dataTable)
         {
+            dataTable.Clear();
+
             foreach (var entity in discountList)
             {
                 DataRow row = dataTable.NewRow();

@@ -2,7 +2,7 @@
 
 namespace GroceryCo.Domain.Entities
 {
-    public class Discount
+    public class DiscountEntity
     {
         public int UPC { get; set; }
         public DiscountTypeIDs DiscountType { get; set; }

@@ -7,7 +7,7 @@
 <DiagramLayout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ex:showrelationlabel="False" ViewPortX="0" ViewPortY="0" xmlns:ex="urn:schemas-microsoft-com:xml-msdatasource-layout-extended" xmlns="urn:schemas-microsoft-com:xml-msdatasource-layout">
   <Shapes>
     <Shape ID="DesignTable:ProductType" ZOrder="7" X="107" Y="69" Height="150" Width="239" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="146" />
-    <Shape ID="DesignTable:Product" ZOrder="6" X="552" Y="71" Height="80" Width="194" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="76" />
+    <Shape ID="DesignTable:Product" ZOrder="6" X="552" Y="71" Height="115" Width="228" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="111" />
     <Shape ID="DesignTable:DiscountType" ZOrder="1" X="98" Y="406" Height="80" Width="250" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="76" />
     <Shape ID="DesignTable:Discount" ZOrder="5" X="525" Y="317" Height="255" Width="255" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="251" />
   </Shapes>
@@ -24,18 +24,6 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:FK_DiscountType_Discount" ZOrder="3" LineWidth="11">
-      <RoutePoints>
-        <Point>
-          <X>348</X>
-          <Y>453</Y>
-        </Point>
-        <Point>
-          <X>525</X>
-          <Y>453</Y>
-        </Point>
-      </RoutePoints>
-    </Connector>
     <Connector ID="DesignRelation:FK_ProductType_Discount" ZOrder="2" LineWidth="11">
       <RoutePoints>
         <Point>
@@ -49,6 +37,18 @@
         <Point>
           <X>525</X>
           <Y>334</Y>
+        </Point>
+      </RoutePoints>
+    </Connector>
+    <Connector ID="DesignRelation:FK_DiscountType_Discount" ZOrder="3" LineWidth="11">
+      <RoutePoints>
+        <Point>
+          <X>348</X>
+          <Y>453</Y>
+        </Point>
+        <Point>
+          <X>525</X>
+          <Y>453</Y>
         </Point>
       </RoutePoints>
     </Connector>

@@ -1,6 +1,6 @@
 ﻿namespace GroceryCo.Domain.Entities
 {
-    public class ProductType
+    public class ProductTypeEntity
     {
         public int UPC { get; set; }
         public string ProductName { get; set; }

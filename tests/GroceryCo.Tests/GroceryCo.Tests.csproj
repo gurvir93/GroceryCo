@@ -49,6 +49,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\src\Application\GroceryCo.Application.csproj">
+      <Project>{a0c72f4d-a487-42a6-9635-e834131add6e}</Project>
+      <Name>GroceryCo.Application</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Domain\GroceryCo.Domain.csproj">
       <Project>{842bef22-6cfe-492c-8b18-766955152811}</Project>
       <Name>GroceryCo.Domain</Name>

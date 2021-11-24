@@ -10,4 +10,8 @@
     <ProjectReference Include="..\Infrastructure\GroceryCo.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+
 </Project>

@@ -4,12 +4,12 @@ using System.Linq;
 
 namespace GroceryCo.Infrastructure.Database
 {
-    public class DatabaseBase<T> : IDatabase<T>
+    public class GroceryCoDatasetTable<T> : IGroceryCoTable<T>
         where T : DataTable
     {
         private T table;
 
-        public DatabaseBase(T table)
+        public GroceryCoDatasetTable(T table)
         {
             this.table = table;
         }

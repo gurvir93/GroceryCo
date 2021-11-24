@@ -292,16 +292,16 @@ namespace GroceryCo.Infrastructure.Database {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.Cascade;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_ProductType_Discount", new global::System.Data.DataColumn[] {
-                        this.tableProductType.UPCColumn}, new global::System.Data.DataColumn[] {
-                        this.tableDiscount.UPCColumn});
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_DiscountType_Discount", new global::System.Data.DataColumn[] {
+                        this.tableDiscountType.DiscountTypeIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableDiscount.DiscountTypeIDColumn});
             this.tableDiscount.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.Cascade;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_DiscountType_Discount", new global::System.Data.DataColumn[] {
-                        this.tableDiscountType.DiscountTypeIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableDiscount.DiscountTypeIDColumn});
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_ProductType_Discount", new global::System.Data.DataColumn[] {
+                        this.tableProductType.UPCColumn}, new global::System.Data.DataColumn[] {
+                        this.tableDiscount.UPCColumn});
             this.tableDiscount.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.Cascade;
@@ -697,6 +697,8 @@ namespace GroceryCo.Infrastructure.Database {
             
             private global::System.Data.DataColumn columnUPC;
             
+            private global::System.Data.DataColumn columnQuantity;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public ProductDataTable() {
@@ -740,6 +742,14 @@ namespace GroceryCo.Infrastructure.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn QuantityColumn {
+                get {
+                    return this.columnQuantity;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -775,10 +785,11 @@ namespace GroceryCo.Infrastructure.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ProductRow AddProductRow(int UPC) {
+            public ProductRow AddProductRow(int UPC, int Quantity) {
                 ProductRow rowProductRow = ((ProductRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        UPC};
+                        UPC,
+                        Quantity};
                 rowProductRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowProductRow);
                 return rowProductRow;
@@ -802,6 +813,7 @@ namespace GroceryCo.Infrastructure.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this.columnUPC = base.Columns["UPC"];
+                this.columnQuantity = base.Columns["Quantity"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -809,7 +821,11 @@ namespace GroceryCo.Infrastructure.Database {
             private void InitClass() {
                 this.columnUPC = new global::System.Data.DataColumn("UPC", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUPC);
+                this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQuantity);
                 this.columnUPC.AllowDBNull = false;
+                this.columnQuantity.AllowDBNull = false;
+                this.columnQuantity.DefaultValue = ((int)(0));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1600,6 +1616,17 @@ namespace GroceryCo.Infrastructure.Database {
                 }
                 set {
                     this[this.tableProduct.UPCColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Quantity {
+                get {
+                    return ((int)(this[this.tableProduct.QuantityColumn]));
+                }
+                set {
+                    this[this.tableProduct.QuantityColumn] = value;
                 }
             }
         }
