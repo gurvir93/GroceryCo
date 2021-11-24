@@ -1,6 +1,7 @@
 # GroceryCo 
 
 GroceryCo is a kiosk checkout system for customers shopping at GroceryCo.
+Check for latest release: https://github.com/gurvir93/GroceryCo/releases/tag/GroceryCo
 
 ## Usage
 
