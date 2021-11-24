@@ -17,7 +17,7 @@ namespace GroceryCo.Tests
             DiscountTypeDataTable discountTypeTable = new DiscountTypeDataTable();
             MapEntityToDatabase.MapDiscountTypesEntityToTable(discountTypeTable);
 
-            Assert.AreEqual(2, discountTypeTable.Rows.Count);
+            Assert.AreEqual(3, discountTypeTable.Rows.Count);
         }
 
         [Test]
@@ -77,6 +77,39 @@ namespace GroceryCo.Tests
             processor.MapEntitiesToTable(discountTable);
 
             Assert.AreEqual(2, discountTable.Rows.Count);
+        }
+
+        [Test]
+        public void ProductProcessorParseLineTest()
+        {
+            string filePath = "Files\\ProductList.txt";
+
+            ProductDataTable productTable = new ProductDataTable();
+            ProductTypeDataTable productTypeTable = new ProductTypeDataTable();
+
+            ProductTypeProcessor productTypeProcessor = new ProductTypeProcessor();
+
+            Assert.IsTrue(productTypeProcessor.ParseLines());
+
+            int productTypeCount = productTypeProcessor.ProductTypeList.Count;
+            productTypeProcessor.MapToEntities();
+            productTypeProcessor.LoadEntityToDatabase(productTypeTable);
+
+            List<ProductTypeEntity> productTypeEntities = MapTableToEntity.MapToProductTypeEntity(productTable);
+
+            Assert.AreEqual(productTypeCount, productTypeEntities.Count);
+
+            ProductProcessor productProcessor = new ProductProcessor(productTypeEntities);
+
+            productProcessor.FilePath = filePath;
+            Assert.IsTrue(productProcessor.ParseLines());
+
+            productProcessor.MapToEntities();
+            productProcessor.LoadEntityToDatabase(productTable);
+
+            List<ProductEntity> entities = MapTableToEntity.MapToProductEntity(productTable);
+
+            Assert.AreEqual(productProcessor.Products.Count, entities.Count);
         }
     }
 }

@@ -1,6 +1,6 @@
 # GroceryCo 
 
-GroceryCo is a kiosk checkout system for our customers.
+GroceryCo is a kiosk checkout system for customers shopping at GroceryCo.
 
 ## Usage
 

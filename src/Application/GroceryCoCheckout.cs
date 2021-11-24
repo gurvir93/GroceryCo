@@ -468,6 +468,7 @@ namespace GroceryCo.Application
                             if (GroceryCoValidator.ValidateSelection(input, count, out discountType))
                             {
                                 DiscountEntity entity = new DiscountEntity();
+                                entity.UPC = selectedProductType;
                                 entity.DiscountType = (DiscountTypeIDs)discountType;
 
                                 bool requiresInput = true;
@@ -496,7 +497,7 @@ namespace GroceryCo.Application
                                         break;
 
                                     // Buy x items to get percent off y
-                                    case (int)DiscountTypeIDs.BuyXGetY:
+                                    case (int)DiscountTypeIDs.BuyXGetY: case (int)DiscountTypeIDs.BuyXSale:
                                         requiresInput = true;
                                         while (requiresInput)
                                         {
@@ -513,7 +514,7 @@ namespace GroceryCo.Application
                                                 while (requiresInput)
                                                 {
                                                     // Percent off for the (y) item, this can be 100% for free item
-                                                    Console.WriteLine($"{Environment.NewLine}Please enter percentage off for discounted item (1-100):");
+                                                    Console.WriteLine($"{Environment.NewLine}Please enter percentage off for discounted item(s) (1-100):");
                                                     Console.Write("Percent off: %");
                                                     input = Console.ReadLine();
                                                     int percentOff = -1;
@@ -547,7 +548,7 @@ namespace GroceryCo.Application
                                     int numDaysValid = -1;
                                     if (GroceryCoValidator.ValidatePercent(input, out numDaysValid))
                                     {
-                                        entity.StartDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+                                        entity.StartDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
                                         entity.EndDate = entity.StartDate.AddDays(numDaysValid + 1).AddSeconds(-1);
                                         requiresDateRange = false;
                                     }
@@ -640,10 +641,11 @@ namespace GroceryCo.Application
                     {
                         for (int i = 0; i < entity.Quantity; i++)
                         {
-                            cart.Groceries.Add(new CartEntity() { UPC = entity.UPC, ProductName = ptEntity.ProductName, Price = Math.Round(ptEntity.Price * (dEntity.DiscountPercent / 100), 2) });
+                            decimal salePrice = Math.Round((ptEntity.Price * (1m - (dEntity.DiscountPercent / 100m))), 2);
+                            cart.Groceries.Add(new CartEntity() { UPC = entity.UPC, ProductName = ptEntity.ProductName, Price = salePrice, PriceOff = ptEntity.Price - salePrice });
                         }
                     }
-                    else
+                    else if (dEntity.DiscountType == DiscountTypeIDs.BuyXGetY)
                     {
                         int buyQuantity = dEntity.ItemsRequired;
                         int requiredItemsLeft = buyQuantity;
@@ -656,10 +658,28 @@ namespace GroceryCo.Application
                             }
                             else
                             {
-                                cart.Groceries.Add(new CartEntity() { UPC = entity.UPC, ProductName = ptEntity.ProductName, Price = Math.Round(ptEntity.Price * (dEntity.DiscountPercent / 100), 2) });
+                                decimal salePrice = Math.Round((ptEntity.Price * (1m - (dEntity.DiscountPercent / 100m))), 2);
+                                cart.Groceries.Add(new CartEntity() { UPC = entity.UPC, ProductName = ptEntity.ProductName, Price = salePrice, PriceOff = ptEntity.Price - salePrice });
                                 requiredItemsLeft = buyQuantity;
                             }
                             requiredItemsLeft--;
+                        }
+                    }
+                    else if (dEntity.DiscountType == DiscountTypeIDs.BuyXSale)
+                    {
+                        int buyQuantity = dEntity.ItemsRequired;
+
+                        for (int i = 0; i < entity.Quantity; i++)
+                        {
+                            if (entity.Quantity < buyQuantity)
+                            {
+                                cart.Groceries.Add(new CartEntity() { UPC = entity.UPC, ProductName = ptEntity.ProductName, Price = ptEntity.Price });
+                            }
+                            else
+                            {
+                                decimal salePrice = Math.Round((ptEntity.Price * (1m - (dEntity.DiscountPercent / 100m))), 2);
+                                cart.Groceries.Add(new CartEntity() { UPC = entity.UPC, ProductName = ptEntity.ProductName, Price = salePrice, PriceOff = ptEntity.Price - salePrice });
+                            }
                         }
                     }
                 }
@@ -674,9 +694,15 @@ namespace GroceryCo.Application
 
             foreach (CartEntity entity in cart.Groceries)
             {
-                Console.WriteLine($"{entity.UPC}  {entity.ProductName} - ${entity.Price}");
+                Console.Write($"{entity.UPC}  {entity.ProductName} - ${entity.Price:###,##0.00}");
+                if(entity.PriceOff > 0)
+                {
+                    Console.Write($" (-${entity.PriceOff:###,##0.00})");
+                }
+                Console.WriteLine();
             }
-            Console.WriteLine($"Total Price: {cart.TotalPrice}");
+            Console.WriteLine($"Total Price: {cart.TotalPrice:###,##0.00}");
+            Console.WriteLine($"Total Saved: {cart.TotalSaved:###,##0.00}");
 
             bool showCheckoutMenu = true;
 

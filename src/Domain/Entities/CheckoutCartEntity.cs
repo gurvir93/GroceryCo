@@ -14,6 +14,14 @@ namespace GroceryCo.Domain.Entities
             }
         }
 
+        public decimal TotalSaved
+        {
+            get
+            {
+                return Groceries.Select(g => g.PriceOff).Sum();
+            }
+        }
+
         public CheckoutCart()
         {
             Groceries = new List<CartEntity>();
@@ -24,7 +32,7 @@ namespace GroceryCo.Domain.Entities
     {
         public int UPC { get; set; }
         public string ProductName { get; set; }
-        public decimal Price { get; set; }
-        public decimal PriceOff { get; set; }
+        public decimal Price { get; set; } = 0;
+        public decimal PriceOff { get; set; } = 0;
     }
 }

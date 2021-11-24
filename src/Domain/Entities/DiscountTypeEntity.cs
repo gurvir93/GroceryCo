@@ -3,6 +3,7 @@
     public enum DiscountTypeIDs
     {
         PercentOff = 0,
-        BuyXGetY
+        BuyXGetY,
+        BuyXSale
     }
 }
