@@ -49,11 +49,11 @@ namespace GroceryCo.Domain
                 discountEntities.Add(new DiscountEntity()
                 {
                      UPC = (int)row[nameof(DiscountEntity.UPC)],
-                     DiscountType = (DiscountTypeIDs) row[nameof(DiscountEntity.DiscountTypeID)],
+                     DiscountType = (DiscountTypeIDs)Enum.Parse(typeof(DiscountTypeIDs), row[nameof(DiscountEntity.DiscountTypeID)].ToString()),
                      StartDate = (DateTime)row[nameof(DiscountEntity.StartDate)],
                      EndDate = (DateTime)row[nameof(DiscountEntity.EndDate)],
-                     DiscountPercentage = (decimal)row[nameof(DiscountEntity.DiscountPercentage)],
-                     ItemsRequired = (int)row[nameof(DiscountEntity.ItemsRequired)]
+                     DiscountPercent = int.Parse(row[nameof(DiscountEntity.DiscountPercent)].ToString()),
+                     ItemsRequired = int.Parse(row[nameof(DiscountEntity.ItemsRequired)].ToString())
                 });
             }
 

@@ -18,7 +18,6 @@ namespace GroceryCo.Domain.Entities
         {
             Groceries = new List<CartEntity>();
         }
-
     }
 
     public class CartEntity
@@ -26,5 +25,6 @@ namespace GroceryCo.Domain.Entities
         public int UPC { get; set; }
         public string ProductName { get; set; }
         public decimal Price { get; set; }
+        public decimal PriceOff { get; set; }
     }
 }

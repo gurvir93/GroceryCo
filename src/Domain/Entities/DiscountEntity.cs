@@ -10,12 +10,12 @@ namespace GroceryCo.Domain.Entities
         {
             get 
             {
-                return nameof(DiscountType);
+                return DiscountType.ToString();
             } 
         }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
-        public decimal DiscountPercentage { get; set; }
+        public int DiscountPercent { get; set; }
 
         // Used for buy x get y discount types.
         public int ItemsRequired { get; set; } = 0;

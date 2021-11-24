@@ -1,10 +1,4 @@
 ﻿using GroceryCo.Infrastructure.Database;
-using static GroceryCo.Infrastructure.Database.GroceryCoDatabase;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
 
 namespace GroceryCo.Domain
@@ -16,12 +10,12 @@ namespace GroceryCo.Domain
         public DataTable DiscountDataTable { get; set; }
         public DataTable DiscountTypeDataTable { get; set; }
 
-        public GroceryCoDatabase()
+        public GroceryCoDatabase(IDatabase db)
         {
-            ProductTable = new ProductDataTable();
-            ProductTypeTable = new ProductTypeDataTable();
-            DiscountDataTable = new DiscountDataTable();
-            DiscountTypeDataTable = new DiscountTypeDataTable();
+            ProductTable = db.GetProductTable();
+            ProductTypeTable = db.GetProductTypeTable();
+            DiscountDataTable = db.GetDiscountTable();
+            DiscountTypeDataTable = db.GetDiscountTypeTable();
         }
     }
 }

@@ -18,9 +18,8 @@ Grapes, 4.00
 Honey, 6.00
 Ice Cream, 5.00
 Ketchup, 3.00
-Onion, 0.0
+Onion, 0.65
 Orange, 1.80
-Other, 1.00
 Pizza, 7.00
 Spinach, 1.00
 Wine, 12.00

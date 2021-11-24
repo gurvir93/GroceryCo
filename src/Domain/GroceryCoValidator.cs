@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GroceryCo.Application
+namespace GroceryCo.Domain
 {
     public class GroceryCoValidator
     {
@@ -41,7 +37,7 @@ namespace GroceryCo.Application
         {
             if (int.TryParse(percentString, out value))
             {
-                if (value < 1 || value > 100)
+                if (value < 0 || value > 100)
                 {
                     return false;
                 }

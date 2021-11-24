@@ -22,13 +22,18 @@ namespace GroceryCo.Application.Processors
             if (prevEntity != null)
             {
                 prevEntity.EndDate = entity.EndDate;
-                prevEntity.DiscountPercentage = entity.DiscountPercentage;
+                prevEntity.DiscountPercent = entity.DiscountPercent;
                 prevEntity.ItemsRequired = entity.ItemsRequired;
             }
             else
             {
                 DiscountEntities.Add(entity);
             }
+        }
+
+        public void RemoveDiscountsByUPC(int upc)
+        {
+            DiscountEntities.RemoveAll(d => d.UPC == upc);
         }
 
         public void MapEntitiesToTable(DataTable discountTable)

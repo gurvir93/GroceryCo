@@ -1,5 +1,5 @@
-﻿using GroceryCo.Domain;
-using GroceryCo.Domain.Entities;
+﻿using GroceryCo.Domain.Entities;
+using GroceryCo.Domain;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -9,7 +9,7 @@ namespace GroceryCo.Application.Processors
 {
     public class ProductProcessor : FileProcessor
     {
-        public readonly Dictionary<int, int> Products;
+        public Dictionary<int, int> Products;
         private List<ProductTypeEntity> _productTypes;
         private List<ProductEntity> _productEntities;
 
@@ -54,6 +54,11 @@ namespace GroceryCo.Application.Processors
             return true;
         }
 
+        public void RemoveDiscountsByUPC(int upc)
+        {
+            _productEntities.RemoveAll(p => p.UPC == upc);
+        }
+
         public void MapToEntities()
         {
             int i = 0;
@@ -64,9 +69,9 @@ namespace GroceryCo.Application.Processors
             }
         }
 
-        public void LoadEntityToDatabase(DataTable productTypeTable)
+        public void LoadEntityToDatabase(DataTable productTable)
         {
-            MapEntityToDatabase.MapProductEntityToTable(_productEntities, productTypeTable);
+            MapEntityToDatabase.MapProductEntityToTable(_productEntities, productTable);
         }
     }
 }

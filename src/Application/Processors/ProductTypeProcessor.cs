@@ -1,5 +1,6 @@
 ﻿using GroceryCo.Domain;
 using GroceryCo.Domain.Entities;
+using GroceryCo.Domain.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -10,15 +11,31 @@ namespace GroceryCo.Application.Processors
     public class ProductTypeProcessor : FileProcessor
     {
         private const string _defaultProductTypeFileLocation = "Files\\DefaultProductTypes.txt";
-        public Dictionary<string, decimal> ProductTypes;
-        private List<ProductTypeEntity> _productTypeList;
+        private Dictionary<string, decimal> ProductTypes;
+        public List<ProductTypeEntity> ProductTypeList { get; set; }
 
         public ProductTypeProcessor()
         {
             ProductTypes = new Dictionary<string, decimal>();
             FilePath = _defaultProductTypeFileLocation;
 
-            _productTypeList = new List<ProductTypeEntity>();
+            ProductTypeList = new List<ProductTypeEntity>();
+        }
+
+        public bool HasProduct(int upc)
+        {
+            return ProductTypeList.Any(p => p.UPC == upc);
+        }
+
+        public bool HasProduct(string productName)
+        {
+            return ProductTypeList.Any(p => p.ProductName == productName);
+        }
+
+        public void AddProductType(string productName, decimal price)
+        {
+            int upc = ProductTypeList.Select(p => p.UPC).Max() + 1;
+            ProductTypeList.Add(new ProductTypeEntity() { UPC = upc, ProductName = productName, Price = price });
         }
 
         public override bool ParseLines()
@@ -58,19 +75,24 @@ namespace GroceryCo.Application.Processors
             return true;
         }
 
+        public void LoadProductListFromTable(DataTable table)
+        {
+            ProductTypeList = MapTableToEntity.MapToProductTypeEntity(table);
+        }
+
         public void MapToEntities()
         {
             int i = 0;
             foreach (var productType in ProductTypes)
             {
-                _productTypeList.Add(new ProductTypeEntity() { UPC = i, ProductName = productType.Key, Price = productType.Value });
+                ProductTypeList.Add(new ProductTypeEntity() { UPC = i, ProductName = productType.Key, Price = productType.Value });
                 i++;
             }
         }
 
         public void LoadEntityToDatabase(DataTable productTypeTable)
         {
-            MapEntityToDatabase.MapProductTypeEntityToTable(_productTypeList, productTypeTable);
+            MapEntityToDatabase.MapProductTypeEntityToTable(ProductTypeList, productTypeTable);
         }
     }
 }

@@ -43,7 +43,7 @@ namespace GroceryCo.Domain
                 row[nameof(entity.DiscountTypeID)] = entity.DiscountTypeID;
                 row[nameof(entity.StartDate)] = entity.StartDate;
                 row[nameof(entity.EndDate)] = entity.EndDate;
-                row[nameof(entity.DiscountPercentage)] = entity.DiscountPercentage;
+                row[nameof(entity.DiscountPercent)] = entity.DiscountPercent;
                 row[nameof(entity.ItemsRequired)] = entity.ItemsRequired;
 
                 dataTable.Rows.Add(row);

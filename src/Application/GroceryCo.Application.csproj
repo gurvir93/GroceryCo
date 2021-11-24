@@ -10,10 +10,14 @@
 
   <ItemGroup>
     <None Remove="Files\DefaultProductTypes.txt" />
+    <None Remove="Files\ProductList.txt" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="Files\DefaultProductTypes.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\ProductList.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

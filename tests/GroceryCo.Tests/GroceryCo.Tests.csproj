@@ -43,7 +43,9 @@
     <Reference Include="System.Data.DataSetExtensions" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MapEntityToDatabaseTests.cs" />
+    <Compile Include="GroceryCoValidatorTests.cs" />
+    <Compile Include="MapEntityToDatabaseAndProcessorTests.cs" />
+    <Compile Include="MapTableToEntityTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
